@@ -8,13 +8,13 @@ const initialState = {
 //reducer
 function reducer(state = initialState, action) {
     if (action.type === 'ADD_NOTE') {
-        return { ...state, notes: [...action.payload] }
+        return { ...state, notes: [...state.notes, action.payload] }
     }
     return state
 }
 
 //actions
-function addNote(payload) {
+export function addNote(payload) {
     return { type: 'ADD_NOTE', payload }
 }
 
